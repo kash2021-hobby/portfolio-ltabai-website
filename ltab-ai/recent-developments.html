@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Recent Developments · LTAB AI</title>
+<meta name="description" content="Short, interactive write-ups of what LTAB AI shipped lately: AI agents, interactive AI video, automations and QA routines — what we built, why, and how it works.">
+<link rel="icon" type="image/png" href="assets/ltab-logo.png">
+<link rel="stylesheet" href="css/fonts.css?v=1">
+<link rel="stylesheet" href="css/styles.css?v=1">
+<link rel="stylesheet" href="css/pages.css?v=1">
+</head>
+<body class="sub" data-theme="light">
+
+<header class="hdr">
+  <div class="hdr-bar"></div>
+  <a href="index.html" class="logo" aria-label="LTAB AI home">
+    <img class="l-light" src="assets/ltab-logo-light.png" alt="LTAB AI"><img class="l-dark" src="assets/ltab-logo-dark.png" alt="">
+  </a>
+  <nav class="nav"><a href="index.html#services">Services</a><a href="our-work.html">Work</a><a href="software-testing.html">Testing</a><a href="recent-developments.html" style="color:var(--orange)">Recent developments</a></nav>
+  <div class="hdr-r">
+    <div class="region"><button class="region-btn" id="regionBtn"><span class="dot"></span><span id="regionLbl">US</span><span class="lbl">· Region</span></button><div class="region-menu" id="regionMenu"></div></div>
+    <a href="index.html#lab" class="btn btn-primary" data-arr>Start your idea</a>
+    <button class="burger" aria-label="Menu"><i></i><i></i></button>
+  </div>
+</header>
+<div class="mmenu"><button class="close">×</button>
+  <nav><a href="index.html">Home</a><a href="our-work.html">Work</a><a href="software-testing.html">Testing</a><a href="index.html#lab" class="o">Start your idea</a></nav>
+  <span class="eyebrow" style="color:#9a978f"><a href="mailto:hello@ltab.ai">hello@ltab.ai</a></span></div>
+
+<main>
+<section class="sub-hero" data-screen-label="01 Developments hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">LTAB AI</a><span>/</span><span class="o">Recent developments</span></div>
+    <h1 class="display">What we've been<br><span class="o">building lately.</span></h1>
+    <p class="lede">Short, interactive write-ups of the new tech we've shipped: AI agents, automations, interactive video and more. Every post shows what we built, why, and how it works.</p>
+  </div>
+</section>
+
+<section style="padding-top:0" data-screen-label="02 Posts">
+  <div class="wrap">
+    <div class="work-tools">
+      <div class="filters" id="filters"></div>
+      <input class="search" id="q" placeholder="Search developments…">
+    </div>
+    <div class="posts" id="posts"></div>
+  </div>
+</section>
+
+<section class="dark" data-screen-label="03 Subscribe">
+  <div class="wrap two">
+    <div><div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>Stay in the loop</div>
+      <h2 class="h2">One email when<br>we ship <span class="o">something new.</span></h2></div>
+    <form id="sub" class="intake" novalidate style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <input id="subEmail" type="email" placeholder="you@company.com" style="flex:1;min-width:220px">
+      <button class="btn btn-primary" data-arr>Subscribe</button>
+      <span class="err" id="subMsg" style="width:100%;color:var(--muted-d)"></span>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer data-theme="dark">
+  <div class="ft-big">Your idea.<br><span class="o">Your rules.</span></div>
+  <div class="ft-bot" style="margin-top:60px;border-top:1px solid var(--line-d);padding-top:30px"><a href="index.html">← LTAB AI home</a><span>© 2026 LTAB AI</span></div>
+</footer>
+
+<!-- reader -->
+<div class="reader" id="reader"><div class="reader-panel" id="readerPanel"></div></div><script src="js/common.js"></script>
+<script src="js/posts.js"></script>
+</body>
+</html>

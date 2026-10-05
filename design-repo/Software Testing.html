@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Software Testing · LTAB AI</title>
+<meta name="description" content="A dedicated QA team for websites and apps. Manual, compatibility, performance, automation and penetration testing with clear reports, agreed scope and honest boundaries.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site/styles.css?v=7">
+<link rel="stylesheet" href="site/pages.css?v=7">
+</head>
+<body class="sub" data-theme="dark">
+
+<header class="hdr">
+  <div class="hdr-bar"></div>
+  <a href="LTAB AI Website.html" class="logo" aria-label="LTAB AI home">
+    <img class="l-light" src="assets/ltab-logo-light.png" alt="LTAB AI"><img class="l-dark" src="assets/ltab-logo-dark.png" alt="">
+  </a>
+  <nav class="nav">
+    <a href="#types">Testing types</a><a href="#checks">What we check</a><a href="#packages">Packages</a><a href="#report">What you receive</a><a href="#faq">FAQ</a>
+  </nav>
+  <div class="hdr-r">
+    <div class="region">
+      <button class="region-btn" id="regionBtn" aria-label="Choose region"><span class="dot"></span><span id="regionLbl">US</span><span class="lbl">· Region</span></button>
+      <div class="region-menu" id="regionMenu"></div>
+    </div>
+    <a href="#start" class="btn btn-primary" data-arr>Tell us about your release</a>
+    <button class="burger" aria-label="Menu"><i></i><i></i></button>
+  </div>
+</header>
+<div class="mmenu">
+  <button class="close" aria-label="Close">×</button>
+  <nav><a href="#types">Testing types</a><a href="#checks">What we check</a><a href="#packages">Packages</a><a href="#report">What you receive</a><a href="#start" class="o">Get tested</a></nav>
+  <a href="LTAB AI Website.html" class="eyebrow" style="color:#9a978f">← Back to LTAB AI</a>
+</div>
+
+<main>
+
+<!-- 01 HERO -->
+<section class="sub-hero dark" data-screen-label="01 QA Hero">
+  <div class="wrap two">
+    <div>
+      <div class="crumb"><a href="LTAB AI Website.html">LTAB AI</a><span>/</span><span>Services</span><span>/</span><span class="o">Software testing</span></div>
+      <h1 class="display">Find the problems <span class="o">before your customers do.</span></h1>
+      <p class="lede">Testing is the only thing this team does. We use your website or app the way real people will, then hand you a clear report your developer can act on the same day.</p>
+      <div class="hero-ctas">
+        <a href="#start" class="btn btn-primary" data-arr>Tell us about your release</a>
+        <a href="#checks" class="btn btn-ghost">See what we check</a>
+      </div>
+      <div class="trust"><span>Dedicated testing team</span><span>Team leads review every finding</span><span>Scope agreed first</span><span>For small teams, freelancers & agencies</span></div>
+    </div>
+
+    <div class="rr rv" id="rr">
+      <div class="rr-top"><b>RELEASE READINESS</b><span class="sample-tag">Sample</span></div>
+      <div class="rr-body">
+        <div class="rr-row"><span class="n" data-n="pass">0</span><div class="bar"><i style="background:var(--pass)" data-b="pass"></i></div><span class="l" style="color:#86efac">Passed</span></div>
+        <div class="rr-row"><span class="n" data-n="fail">0</span><div class="bar"><i style="background:var(--crit)" data-b="fail"></i></div><span class="l" style="color:#fca5a5">Failed</span></div>
+        <div class="rr-row"><span class="n" data-n="block">0</span><div class="bar"><i style="background:var(--blocked)" data-b="block"></i></div><span class="l" style="color:#cbd5e1">Blocked</span></div>
+        <div class="rr-alert" id="rrAlert"><span class="d"></span><span>1 critical issue needs attention</span></div>
+      </div>
+      <div class="rr-tabs" id="rrTabs">
+        <button class="on" data-k="0">First run</button><button data-k="1">After fixes</button><button data-k="2">Retest</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 WHAT IS QA -->
+<section data-screen-label="02 What is QA">
+  <div class="wrap">
+    <div class="two" style="align-items:start">
+      <div class="rv">
+        <div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>In plain English</div>
+        <h2 class="h2">What is QA?</h2>
+      </div>
+      <p class="lede rv" style="font-size:clamp(19px,1.6vw,23px);color:var(--ink)">QA means <b>quality assurance</b>: checking software in a planned way so you find the problems before your customers, your client or your staff do. LTAB gives you an independent check, so the important issues are fixed before you launch, hand over or go live.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 TYPES OF TESTING -->
+<section id="types" style="padding-top:0" data-screen-label="03 Types of testing">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>Types of testing</div>
+      <h2 class="h2">The testing your<br><span class="o">product needs.</span></h2></div>
+      <p class="lede">Different problems need different kinds of testing. Here are the ones we run most often, in plain words, and what each one saves you from.</p>
+    </div>
+
+    <div class="ttypes">
+      <div class="ttype rv"><span class="n">01</span><h4>Manual testing</h4>
+        <p>A real person uses your website or app the way a customer would: signing up, searching, booking, paying. They click, type, and try to break it.</p>
+        <div class="why"><b>Why it matters</b><span>Catches the confusing and broken things a script cannot see, before a customer finds them.</span></div></div>
+      <div class="ttype rv"><span class="n">02</span><h4>Compatibility testing</h4>
+        <p>We open your product on different browsers, phones, tablets and screen sizes, and check it looks and works the same everywhere.</p>
+        <div class="why"><b>Why it matters</b><span>Stops the "it works on my laptop" surprise when a customer opens it on an iPhone or an older Android.</span></div></div>
+      <div class="ttype rv"><span class="n">03</span><h4>Performance testing</h4>
+        <p>We check how your product behaves under pressure: slow pages, heavy traffic, long lists, and visitors on a weak connection.</p>
+        <div class="why"><b>Why it matters</b><span>A slow page loses customers. You find out how it holds up before launch day, not during it.</span></div></div>
+      <div class="ttype rv"><span class="n">04</span><h4>Automation testing</h4>
+        <p>We write scripts that repeat the same checks automatically, every single time you change something.</p>
+        <div class="why"><b>Why it matters</b><span>Fast, repeatable checks on the parts that must never break, without paying for the same click-through by hand each week.</span></div></div>
+      <div class="ttype rv"><span class="n">05</span><h4>Penetration testing</h4>
+        <p>An authorised attempt to break into your own system on purpose, to find the weak spots before someone else does.</p>
+        <div class="why"><b>Why it matters</b><span>Shows you the holes while they are still harmless. Run by specialists, on a separate scope and written permission.</span></div></div>
+    </div>
+
+    <div class="eyebrow rv" style="margin:64px 0 18px"><span class="cap"></span>Also part of the mix</div>
+    <div class="ttypes2">
+      <div class="t2 rv"><h4>Regression testing</h4><p>After a change, we re-check the older features to make sure nothing that used to work has quietly broken.</p></div>
+      <div class="t2 rv"><h4>Functional testing</h4><p>Does every feature do exactly what it is supposed to do, in every situation it will meet in real life?</p></div>
+      <div class="t2 rv"><h4>Security testing</h4><p>We look for the common weaknesses: weak logins, exposed data, and easy ways in that should not be there.</p></div>
+      <div class="t2 rv"><h4>API testing</h4><p>We check the behind-the-scenes connections that pass data between your app, your database and other systems.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 WHAT WE CHECK -->
+<section id="checks" class="dark" data-screen-label="04 What we check">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>What we check</div>
+      <h2 class="h2">What we check,<br><span class="o">and why it matters.</span></h2></div>
+      <p class="lede">Testing is not one thing. Here is a simple picture of what we look at, and what each part protects you from.</p>
+    </div>
+
+    <div class="chk2">
+      <div class="card rv">
+        <div class="k">What we check</div>
+        <ul class="plain">
+          <li>Every important feature: forms, search, sign-up, booking, checkout, payments, dashboards</li>
+          <li>The full customer journey, from first visit to the confirmation email</li>
+          <li>Real browsers, phones, tablets and screen sizes your customers actually use</li>
+          <li>Different kinds of people: a new visitor, a returning customer, a staff member, an admin</li>
+          <li>The connections that move data between your product and other systems</li>
+          <li>What happens when things go wrong: bad input, no internet, an expired card, a slow reply</li>
+        </ul>
+      </div>
+      <div class="card rv">
+        <div class="k">Why it matters</div>
+        <ul class="plain">
+          <li>A sign-up that fails means a customer you never get back</li>
+          <li>A payment that goes wrong means lost money and a support ticket</li>
+          <li>A page that looks broken on mobile loses trust in seconds</li>
+          <li>A bug your client finds first costs you the relationship, not just the fix</li>
+          <li>A slow page pushes visitors away before they ever buy</li>
+          <li>You sleep better when someone qualified has already checked it</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="only rv">
+      <div>
+        <div class="eyebrow" style="color:var(--muted-d);margin-bottom:20px"><span class="cap"></span>Why us</div>
+        <h3>Testing is the only thing<br>this team does.</h3>
+        <p class="lede" style="color:var(--muted-d);margin-top:20px">Most small teams have no dedicated tester. The founder, the designer or the developer checks their own work when there is time, which is exactly where bugs hide. Vibe coding made this faster and riskier: a lot of code is now written in a weekend, and nobody has gone through it line by line.</p>
+        <p class="lede" style="color:var(--muted-d);margin-top:16px">We are different. LTAB has a dedicated testing team, managed by team leads who plan the work, review every finding and stand behind the report. We are not squeezing testing in between other projects. Testing is our main focus, so it is also what we are best at.</p>
+        <p class="lede" style="color:#f3f1ec;margin-top:16px">For a small cost, your product gets a full professional check before your client, your investor or your customer sees it. If there is a bug, you hear it from us first.</p>
+      </div>
+      <div class="only-grid">
+        <div class="oc"><b>A dedicated team</b><span>Testers who work on nothing else, not developers checking their own code.</span></div>
+        <div class="oc"><b>Led by team leads</b><span>Every finding is reviewed and explained before it reaches you.</span></div>
+        <div class="oc"><b>Built for small teams</b><span>Freelancers, studios, startups and agencies that cannot hire a QA person.</span></div>
+        <div class="oc"><b>Cheaper than a hire</b><span>One check costs a fraction of a full-time tester's month.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 FLAGSHIP -->
+<section data-screen-label="05 Release Readiness Audit">
+  <div class="wrap">
+    <div class="flag rv">
+      <div>
+        <div class="eyebrow" style="color:rgba(255,255,255,.85);margin-bottom:20px"><span class="cap" style="background:#fff"></span>Flagship offer</div>
+        <h3>Release Readiness Audit</h3>
+        <p style="margin:20px 0 22px">Our main service, and the easiest one to understand. You are about to launch something, or hand it to a client. We take it, use it the way real people will, and tell you exactly what is broken, what is risky and what is ready to go.</p>
+        <p style="margin:0 0 30px;font-size:16px;opacity:.92">You do not need to know anything about testing to buy it. You give us the product and the date. We give you the answer.</p>
+        <a href="#start" class="btn" data-arr>Ask about a release check</a>
+        <p style="font-size:14px;margin-top:20px;opacity:.85">The report supports your decision. You keep final approval of the release.</p>
+      </div>
+      <ol>
+        <li><b>01</b><span><strong>We agree the plan.</strong> You tell us what you are shipping, who uses it and when it goes live. We write down what will be tested and what will not, so nothing is a surprise later.</span></li>
+        <li><b>02</b><span><strong>We test like real users.</strong> Our team goes through your product on the agreed browsers, phones and accounts, and records every problem with the steps to repeat it.</span></li>
+        <li><b>03</b><span><strong>You get the report.</strong> A clear summary of what was checked, what needs fixing now, what can wait, and what risk is left. Your developer can start the same day.</span></li>
+      </ol>
+    </div>
+
+    <div class="lab-note rv">
+      <div class="eyebrow" style="margin-bottom:18px"><span class="cap"></span>What is a testing lab?</div>
+      <div class="two" style="gap:40px">
+        <p class="lede" style="color:var(--ink);max-width:56ch">A testing lab is simply the controlled setup where we run your product the way it will be used in the real world. It holds the browsers, phones and tablets your customers actually own, test accounts for each type of user, realistic sample data, and one place to record every issue with its evidence. Nothing is guesswork, and your live site is never at risk while we work.</p>
+        <div class="lab-chips">
+          <span>Chrome · Safari · Edge · Firefox</span><span>iPhone · Android · iPad · Windows · macOS</span><span>Test accounts for every user type</span><span>Sample data &amp; sandbox payments</span><span>One evidence log for every issue</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lc-head rv">
+      <div class="eyebrow" style="margin-bottom:18px"><span class="cap"></span>The testing life cycle we follow</div>
+      <h2 class="h2" style="font-size:clamp(34px,4.4vw,64px)">Six steps, every time.</h2>
+      <p class="lede" style="margin-top:18px">This is the same order we follow on every project, from a single page to a full app. Tap a step to see what happens, what you receive and what we need from you.</p>
+    </div>
+    <div class="cycle">
+      <div class="proc six" id="proc"></div>
+      <div class="proc-panel" id="procPanel"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 WHO IT'S FOR -->
+<section class="dark" data-screen-label="06 Who it's for">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>This is for you if</div>
+      <h2 class="h2">Useful support for<br><span class="o">small teams on deadline.</span></h2></div>
+      <p class="lede">You do not need a testing department, a big budget or a long contract. You need one honest check before the important moment.</p>
+    </div>
+    <div class="aud2">
+      <div class="rv"><span class="who">01 · Small teams on a deadline</span><p>You are days from launch and there is no time left to check everything yourself.</p></div>
+      <div class="rv"><span class="who">02 · Smart teams</span><p>You know testing matters. You would rather build than click the same flow for the tenth time.</p></div>
+      <div class="rv"><span class="who">03 · Freelancers</span><p>You deliver alone and want an independent check before the client ever sees the work.</p></div>
+      <div class="rv"><span class="who">04 · New products</span><p>You built something new and want it tested in the real world, not just on your own laptop.</p></div>
+      <div class="rv"><span class="who">05 · Teams with no QA</span><p>There is no tester on the team, and you want outside help without hiring one.</p></div>
+      <div class="rv"><span class="who">06 · WordPress &amp; Shopify sites</span><p>Your site runs on WordPress, Shopify or a similar platform and you are not sure it is holding up.</p></div>
+      <div class="rv"><span class="who">07 · Vibe-coding developers</span><p>You shipped fast with AI tools. Now someone needs to go through what the AI wrote.</p></div>
+      <div class="rv"><span class="who">08 · Existing websites</span><p>Your site is already live and you are not sure it is working well, or getting the visibility you hoped for.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 PACKAGES -->
+<section id="packages" data-screen-label="07 Packages">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>Ways to engage</div>
+      <h2 class="h2">Simple starting points<br><span class="o">for a real release.</span></h2></div>
+      <p class="lede">Pick the one closest to what you need. We confirm the exact work and the exact price after we have seen your product, your timing and your access.</p>
+    </div>
+    <div class="pk-grid">
+      <div class="pk rv">
+        <h4>Release Confidence Check</h4>
+        <div class="price">$1,200<small>starting from · one-off</small></div>
+        <p>A single, thorough check of your website or app before it goes live or gets handed over.</p>
+        <div class="best"><b>Best for</b><span>You are about to launch, or deliver a finished project to a client, and want a second pair of eyes.</span></div>
+        <details><summary>What's inside</summary><ul><li>Kickoff call and risk checklist</li><li>Your most important journeys tested</li><li>Every issue with steps and screenshots</li><li>One follow-up check after the fixes</li><li>A plain-language release summary</li></ul></details>
+        <a href="#start" class="btn btn-ghost" data-pkg="Release Confidence Check">Discuss a release check</a>
+      </div>
+      <div class="pk pop rv">
+        <span class="badge">Most flexible</span>
+        <h4>Sprint QA Partner</h4>
+        <div class="price">$2,800<small>starting from · per month</small></div>
+        <p>A tester on your team, month by month, keeping up with everything you ship.</p>
+        <div class="best"><b>Best for</b><span>You release something new every week or two and want testing to run alongside development.</span></div>
+        <details><summary>What's inside</summary><ul><li>Planning and feature reviews</li><li>Checks on every change you ship</li><li>Retesting of your fixes</li><li>A monthly risk summary</li><li>A set number of testing hours each month</li></ul></details>
+        <a href="#start" class="btn btn-primary" data-pkg="Sprint QA Partner">Plan ongoing support</a>
+      </div>
+      <div class="pk rv">
+        <h4>Agency White-Label Desk</h4>
+        <div class="price">$1,600<small>starting from · one-off</small></div>
+        <p>Testing that runs behind your brand, for agencies, studios and freelancers with clients.</p>
+        <div class="best"><b>Best for</b><span>You deliver client projects and want the testing to look like it came from your own studio.</span></div>
+        <details><summary>What's inside</summary><ul><li>We work under your name</li><li>Reports in your format</li><li>One named contact, only for you</li><li>We contact your client only if you allow it</li><li>Confidentiality agreed before we start</li></ul></details>
+        <a href="#start" class="btn btn-ghost" data-pkg="Agency White-Label Desk">Discuss agency support</a>
+      </div>
+      <div class="pk rv">
+        <h4>QA Foundation Review</h4>
+        <div class="price">$2,400<small>starting from · one-off</small></div>
+        <p>A look at how your team checks its own work today, and what to change first.</p>
+        <div class="best"><b>Best for</b><span>You have a small team, ship often, and want a simple, honest process you can actually keep to.</span></div>
+        <details><summary>What's inside</summary><ul><li>Review of your current workflow</li><li>The gaps you are missing, explained</li><li>A prioritised list of improvements</li><li>A named owner and next steps</li><li>A short session to walk your team through it</li></ul></details>
+        <a href="#start" class="btn btn-ghost" data-pkg="QA Foundation Review">Review our approach</a>
+      </div>
+    </div>
+    <p class="pk-note" id="pkNote">Prices are indicative "starting from" amounts in US dollars (USD). The final quote depends on the product, the number of pages or journeys, the devices, your access, the deadline, follow-up checks and any scope changes.</p>
+  </div>
+</section>
+
+<!-- 08 WHAT YOU RECEIVE -->
+<section id="report" class="dark" data-screen-label="08 What you receive">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>What you receive</div>
+      <h2 class="h2">The documents,<br><span class="o">evidence and reports.</span></h2></div>
+      <p class="lede">You do not just get an opinion. You get the paperwork a developer, a client or an investor can read, with proof behind every issue.</p>
+    </div>
+    <div class="rep rv">
+      <div class="rep-list" id="repList"></div>
+      <div class="rep-detail" id="repDetail"></div>
+    </div>
+    <p class="note" style="color:var(--muted-d)">The list above is what a typical engagement delivers. The exact set is confirmed in your scope before we start.</p>
+  </div>
+</section>
+
+<!-- 09 BOUNDARIES -->
+<section data-screen-label="09 Boundaries">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>Clear boundaries</div>
+      <h2 class="h2">You always know<br><span class="o">what is covered.</span></h2></div>
+      <p class="lede">A good report is honest about what it checked and what it cannot prove. Anything outside our agreed scope is written down, not glossed over.</p>
+    </div>
+    <div class="bound">
+      <div class="card yes rv"><h4>What we cover</h4><ul>
+        <li>The features and journeys we agreed with you, on the devices and browsers we agreed</li>
+        <li>Real people using your product, with realistic accounts and sample data</li>
+        <li>Every issue written up with steps to repeat it, evidence, and how serious it is</li>
+        <li>Follow-up checks after your fixes, plus the areas a fix might have affected</li>
+        <li>Plain notes on anything confusing or hard to use, as observations rather than formal research</li>
+        <li>A written summary of what was checked, what was left out, and what risk remains</li></ul></div>
+      <div class="card no rv"><h4>What needs its own scope</h4><ul>
+        <li>Penetration testing and security work, which is a separate specialist engagement</li>
+        <li>Security certificates, legal compliance approvals and accessibility certification</li>
+        <li>Load, stress and live-traffic testing against real production systems</li>
+        <li>Building an automated test suite for your team to run themselves</li>
+        <li>Fixing the bugs we find. We report them; your team fixes them</li>
+        <li>A promise of zero bugs. No review can honestly offer that</li></ul></div>
+    </div>
+
+    <div class="eyebrow rv" style="margin:100px 0 22px"><span class="cap"></span>Clear ownership</div>
+    <h2 class="h2 rv" style="margin-bottom:44px">Who does what,<br><span class="o">on both sides.</span></h2>
+    <div class="roles five">
+      <div class="role rv"><h5>Service owner</h5><p>Your single point of contact. Looks after the quote, the schedule and anything you want escalated.</p></div>
+      <div class="role rv"><h5>Testing lead</h5><p>Plans how we test, reviews every finding before it reaches you, and explains the risk in plain words.</p></div>
+      <div class="role rv"><h5>Testing team</h5><p>Runs the checks, follows your customer journeys, records the evidence and retests your fixes.</p></div>
+      <div class="role rv"><h5>Coordinator</h5><p>Sorts out access, timing, progress updates and the final handover of everything we produced.</p></div>
+      <div class="role rv you"><h5>Your side</h5><p>A working build or test link, authorised access, sample data, someone who can answer product questions, and a person who owns the fixes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 FAQ -->
+<section id="faq" class="dark" data-screen-label="10 FAQ">
+  <div class="wrap two" style="align-items:start">
+    <div class="rv"><div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>Good to know</div>
+    <h2 class="h2">Questions,<br><span class="o">answered clearly.</span></h2></div>
+    <div class="faq rv">
+      <details open><summary>What will you actually test?<i></i></summary><p>Any mix of manual, compatibility, performance, automation and penetration testing, plus regression, functional, security and API checks. In practice we agree the list first: your features, your customer journeys, sign-in, forms, checkout or booking, browser and device behaviour, and the connections behind the scenes.</p></details>
+      <details><summary>Which testing types should I choose?<i></i></summary><p>You do not have to decide alone. Tell us what you are shipping and when it goes live, and we will suggest the smallest useful set. Most first projects start with manual and compatibility testing, then add performance or automation once the product is stable.</p></details>
+      <details><summary>What do we need to provide?<i></i></summary><p>A usable website or app build, authorised access, test data (or permission to create it), key requirements or known limits, the devices you support, someone who can answer questions, and a person who owns the fixes. Incomplete access moves the test window.</p></details>
+      <details><summary>Can you work under our agency brand?<i></i></summary><p>Yes, once confidentiality, the report format, client contact and escalation rules are agreed. The work still records its scope, issues and decisions clearly, so nothing is hidden from you.</p></details>
+      <details><summary>Do you test a live website?<i></i></summary><p>We normally start in a test or staging environment. We only test live with written permission, agreed limits, and a contact who can respond if something unexpected happens.</p></details>
+      <details><summary>Is penetration testing included?<i></i></summary><p>Not by default. Our standard testing can note security observations inside the agreed scope, but a real penetration test is separate specialist work with its own written permission and its own price. We will tell you when it is genuinely needed and when it is not.</p></details>
+      <details><summary>Can you guarantee zero problems?<i></i></summary><p>No, and you should be careful with anyone who says yes. We report the evidence found inside the agreed scope, with the remaining risk named honestly. No finite review can promise complete coverage.</p></details>
+      <details><summary>How are the prices set?<i></i></summary><p>The prices shown are indicative USD starting points. The final quote names the product, the pages or journeys, the devices, the test window, the deliverables, your responsibilities, and the rules for changes. If you are outside the United States we will quote in your currency.</p></details>
+      <details><summary>How fast can you start?<i></i></summary><p>Usually within two to five working days of the scope being agreed. If you are on a hard launch date, say so in the form and we will tell you honestly whether we can meet it.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 11 START -->
+<section id="start" class="dark" style="padding-top:0" data-screen-label="11 Start">
+  <div class="wrap two" style="align-items:start">
+    <div class="rv">
+      <div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>Start with your project</div>
+      <h2 class="h2">Tell us what you<br>need <span class="o">checked.</span></h2>
+      <p class="lede" style="margin-top:24px">The more you tell us here, the fewer questions we have to ask later. A testing lead reads every one of these and replies within one working day with a suggested first check and a clear price.</p>
+      <div class="trust" style="margin-top:34px"><span>Reply within 1 working day</span><span>No obligation</span><span>Your details stay private</span></div>
+    </div>
+    <div class="intake rv" id="intake">
+      <form id="qaForm" novalidate>
+        <label style="margin-top:0">What are you shipping?</label>
+        <textarea id="qProduct" rows="3" placeholder="e.g. A booking website for our clinic, going live after a redesign"></textarea>
+
+        <label>What would you like us to test?</label>
+        <div class="chips" data-group="focus"><button type="button" class="chip">Sign-up &amp; login</button><button type="button" class="chip">Checkout &amp; payments</button><button type="button" class="chip">Booking &amp; forms</button><button type="button" class="chip">Search &amp; filters</button><button type="button" class="chip">Dashboard &amp; admin</button><button type="button" class="chip">Mobile app</button><button type="button" class="chip">API &amp; integrations</button><button type="button" class="chip">Everything</button></div>
+
+        <label>What kind of platform is it?</label>
+        <div class="chips" data-group="platform"><button type="button" class="chip">Website</button><button type="button" class="chip">Web app</button><button type="button" class="chip">iOS app</button><button type="button" class="chip">Android app</button><button type="button" class="chip">API / backend</button><button type="button" class="chip">Not sure</button></div>
+
+        <label>What is it built on?</label>
+        <input id="qStack" placeholder="e.g. React and Node, WordPress, Shopify, Flutter, no idea yet">
+
+        <label>Which testing services are you looking for?</label>
+        <div class="chips" data-group="services"><button type="button" class="chip">Manual</button><button type="button" class="chip">Compatibility</button><button type="button" class="chip">Performance</button><button type="button" class="chip">Automation</button><button type="button" class="chip">Penetration</button><button type="button" class="chip">Regression</button><button type="button" class="chip">Functional</button><button type="button" class="chip">Security</button><button type="button" class="chip">API</button><button type="button" class="chip">Not sure yet</button></div>
+
+        <label>Package (optional)</label>
+        <div class="chips" data-group="package" data-single><button type="button" class="chip">Release Confidence Check</button><button type="button" class="chip">Sprint QA Partner</button><button type="button" class="chip">Agency White-Label Desk</button><button type="button" class="chip">QA Foundation Review</button><button type="button" class="chip">Not sure</button></div>
+
+        <div class="row" style="margin-top:6px">
+          <div><label>Release date</label><input id="qDate" type="date"></div>
+          <div><label>How soon do you want to start?</label><div class="chips" data-group="start" data-single><button type="button" class="chip">Immediately</button><button type="button" class="chip">Within 2 weeks</button><button type="button" class="chip">This month</button><button type="button" class="chip">Just exploring</button></div></div>
+        </div>
+
+        <label>Is the test link or build ready?</label>
+        <div class="chips" data-group="access" data-single><button type="button" class="chip">Yes</button><button type="button" class="chip">Soon</button><button type="button" class="chip">Not yet</button></div>
+
+        <label>Your details</label>
+        <div class="row"><input id="qName" placeholder="Your name" autocomplete="name"><input id="qEmail" type="email" placeholder="Work email" autocomplete="email"></div>
+        <div class="row" style="margin-top:10px"><input id="qRole" placeholder="Your role, e.g. Founder, Product manager, Freelancer" autocomplete="organization-title"><input id="qCompany" placeholder="Company or studio (optional)" autocomplete="organization"></div>
+        <div class="row" style="margin-top:10px">
+          <div><select id="qCountry" aria-label="Country"></select></div>
+          <div class="phone" id="qPhone" data-phone></div>
+        </div>
+        <div class="submit"><span class="err" id="qErr"></span><button class="btn btn-primary" type="submit" data-arr>Request a QA assessment</button></div>
+      </form>
+      <div class="intake-done">
+        <div style="width:88px;height:88px;border-radius:50%;background:var(--orange);display:grid;place-items:center;margin:0 auto 22px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h3 class="h3" style="font-size:36px">Got it, <span class="o" id="qDoneName"></span>.</h3>
+        <p class="lede" style="margin:12px auto 0">A testing lead will reply within one working day with a few scope questions and a suggested first check.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer data-theme="dark">
+  <div class="ft-big">You build it.<br>We test it.<br><span class="o">You ship it.</span></div>
+  <div class="ft-bot" style="margin-top:60px;border-top:1px solid var(--line-d);padding-top:30px"><a href="LTAB AI Website.html">← LTAB AI home</a><span>© 2026 LTAB AI · Privacy · Terms</span></div>
+</footer>
+
+<script src="site/common.js?v=7"></script>
+<script src="site/qa.js?v=7"></script>
+</body>
+</html>

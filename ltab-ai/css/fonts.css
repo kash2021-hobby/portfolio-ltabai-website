@@ -1,0 +1,5 @@
+/* LTAB AI — self-hosted fonts, latin subset, variable builds (brotli-compressed woff2).
+   Bricolage Grotesque keeps its optical-size axis; weights declared as ranges. */
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 800;font-stretch:100%;font-display:swap;src:url('../fonts/BricolageGrotesque-variable.woff2') format('woff2');}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 700;font-display:swap;src:url('../fonts/Manrope-variable.woff2') format('woff2');}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url('../fonts/JetBrainsMono-variable.woff2') format('woff2');}

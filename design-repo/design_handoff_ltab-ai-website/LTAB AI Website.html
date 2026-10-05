@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LTAB AI · Freedom to build</title>
+<meta name="description" content="LTAB AI builds custom software, AI agents, automation, websites, e-commerce, branding, marketing, AI video and QA, shaped around how you want to work.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site/styles.css?v=7">
+</head>
+<body data-theme="light">
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr">
+  <div class="hdr-bar"></div>
+  <a href="#top" class="logo" aria-label="LTAB AI home">
+    <img class="l-light" src="assets/ltab-logo-light.png" alt="LTAB AI">
+    <img class="l-dark" src="assets/ltab-logo-dark.png" alt="">
+  </a>
+  <nav class="nav">
+    <a href="#services">Services</a><a href="Our Work.html">Work</a><a href="Software Testing.html">Testing</a><a href="Recent Developments.html">Recent developments</a><a href="#markets-sec">Markets</a>
+  </nav>
+  <div class="hdr-r">
+    <div class="region">
+      <button class="region-btn" id="regionBtn" aria-label="Choose region"><span class="dot"></span><span id="regionLbl">US</span><span class="lbl">· Region</span></button>
+      <div class="region-menu" id="regionMenu"></div>
+    </div>
+    <a href="#lab" class="btn btn-primary" data-arr>Start your idea</a>
+    <button class="burger" aria-label="Menu"><i></i><i></i></button>
+  </div>
+</header>
+<div class="mmenu">
+  <button class="close" aria-label="Close">×</button>
+  <nav><a href="#services">Services</a><a href="Our Work.html">Work</a><a href="Software Testing.html">Testing</a><a href="Recent Developments.html">Updates</a><a href="#lab" class="o">Start your idea</a></nav>
+  <div class="eyebrow" style="color:#9a978f"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="553d3039393a15392134377b343c">[email&#160;protected]</a> · 100+ companies · 8 markets</div>
+</div>
+
+<main id="top">
+
+<!-- ============ 01 HERO ============ -->
+<section class="hero" data-scene="hero" data-screen-label="01 Hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="eyebrow"><span class="cap"></span>Software · AI · Brand · Since 2021</div>
+      <h1 class="display">Freedom<br>to <span class="o">build.</span></h1>
+      <p class="lede">Think it, design it, build it your way. No templates, no SaaS rules. We're the team of engineers, designers and AI specialists who make it real.</p>
+      <div class="hero-ctas">
+        <a href="#lab" class="btn btn-primary" data-arr>Start your idea</a>
+        <a href="#work" class="btn btn-ghost">See our work</a>
+      </div>
+      <div class="hero-region">Building for <b id="heroRegion">United States</b> · from our India engineering hub</div>
+    </div>
+  </div>
+  <div class="hero-drag" aria-label="Drag to pull the L apart"></div>
+  <div class="hero-hint"><span class="pill"></span>Drag the L. Pull it apart.</div>
+</section>
+
+<!-- ============ 02 MANIFESTO ============ -->
+<section class="manifesto" data-scene="manifesto" data-screen-label="02 Manifesto">
+  <div class="wrap sticky">
+    <div class="eyebrow" style="margin-bottom:32px"><span class="cap"></span>What we believe</div>
+    <p>SaaS tells you how to work. We ask how <em>you</em> want to work. Then we <em>build</em> <em>that.</em></p>
+  </div>
+</section>
+
+<!-- ============ 03 FOUR FREEDOMS ============ -->
+<section class="freedoms" id="freedoms" data-scene="freedoms" data-theme="dark" data-screen-label="03 Four Freedoms">
+  <div class="sticky">
+    <div class="fr-grid">
+      <div class="fr-left"></div>
+      <div>
+        <div class="eyebrow"><span class="cap"></span>The four freedoms</div>
+        <div class="fr-num"><span>01<br>02<br>03<br>04</span></div>
+        <div class="fr-text">
+          <div class="fr-item"><span class="tag">Freedom of thinking</span><h3>Think without a template.</h3><p>Start from the idea in your head, not the options in someone else's dropdown. If you can describe it, it can be built, and in the age of AI faster than you'd expect.</p></div>
+          <div class="fr-item"><span class="tag">Freedom of design</span><h3>Design it the way you see it.</h3><p>Your colours, your flow, your screens. Every pixel follows how you and your customers think, not a theme everyone else is also using.</p></div>
+          <div class="fr-item"><span class="tag">Freedom of development</span><h3>Built around you, not a SaaS product.</h3><p>Your rules, your workflow, your stack. Custom code and AI agents that bend to your process. You own all of it.</p></div>
+          <div class="fr-item"><span class="tag">Freedom of business</span><h3>Your business. Your rules. Redesign anytime.</h3><p>Markets change and so do you. Your software changes with you, never the other way round.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="fr-steps"><button>01 Thinking</button><button>02 Design</button><button>03 Development</button><button>04 Business</button></div>
+  </div>
+</section>
+
+<!-- ============ 04 SERVICES ============ -->
+<section id="services" data-scene="services" data-screen-label="04 Services">
+  <div class="wrap">
+    <div class="svc-head rv">
+      <div>
+        <div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>What we do</div>
+        <h2 class="h2">Build. Grow.<br><span class="o">Assure.</span></h2>
+      </div>
+      <div class="tabs" id="svcTabs">
+        <button data-p="build">Build<span class="n">05</span></button>
+        <button data-p="grow">Grow<span class="n">05</span></button>
+        <button data-p="assure">Assure<span class="n">02</span></button>
+      </div>
+    </div>
+    <p class="svc-pillar-line" id="svcLine"></p>
+    <div class="svc-grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<!-- ============ 05 IDEA → BUSINESS ============ -->
+<section id="path" data-scene="path" data-screen-label="05 Idea to Business">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>End to end</div>
+      <h2 class="h2">From idea<br>to <span class="o">business.</span></h2>
+      <p class="lede" style="margin-top:24px">One team for everything between "what if…" and your first paying customers.</p>
+    </div>
+    <div class="path-track">
+      <div class="path-line"><i></i></div>
+      <div class="step"><span class="knob"></span><span class="k">01</span><h4>Idea</h4><p>You talk, we listen. We sketch it together in plain language.</p></div>
+      <div class="step"><span class="knob"></span><span class="k">02</span><h4>Brand</h4><p>Name, identity, look and voice that fit you.</p></div>
+      <div class="step"><span class="knob"></span><span class="k">03</span><h4>Product</h4><p>App, website or store, with AI and automation where it helps.</p></div>
+      <div class="step"><span class="knob"></span><span class="k">04</span><h4>Launch</h4><p>Tested by our QA team, deployed, monitored.</p></div>
+      <div class="step"><span class="knob"></span><span class="k">05</span><h4>Growth</h4><p>Ads, AI video and campaigns that bring customers in.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 TWO PATHS ============ -->
+<section data-scene="path" data-screen-label="06 Two Paths">
+  <div class="wrap paths">
+    <div class="rv">
+      <div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>Where are you today?</div>
+      <h2 class="h2">Two starting points. <span class="o">Same freedom.</span></h2>
+      <div class="switch" id="switch" data-v="0"><span class="thumb"></span><button class="on">I'm just starting</button><button>I run a business</button></div>
+    </div>
+    <div class="path-card rv" id="pathCard"></div>
+  </div>
+</section>
+
+<!-- ============ 07 WORK ============ -->
+<section id="work" data-scene="work" data-screen-label="07 Work">
+  <div class="wrap">
+    <div class="svc-head rv" style="margin-bottom:0">
+      <div>
+        <div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>Selected work</div>
+        <h2 class="h2">Built for brands<br>that wanted <span class="o">their way.</span></h2>
+      </div>
+      <a href="#lab" class="btn btn-ghost" data-arr>Start yours</a>
+    </div>
+    <div class="work-grid">
+      <a class="ph rv" style="grid-column:span 7;min-height:440px"><span class="lbl">[ project screenshot · client brand ]</span><div><div class="t">Project name</div><div class="tags"><span>AI Agents</span><span>USA</span></div></div></a>
+      <a class="ph rv" style="grid-column:span 5;min-height:440px"><span class="lbl">[ project screenshot ]</span><div><div class="t">Project name</div><div class="tags"><span>E-commerce</span><span>UAE</span></div></div></a>
+      <a class="ph rv" style="grid-column:span 4"><span class="lbl">[ project screenshot ]</span><div><div class="t">Project name</div><div class="tags"><span>Automation</span><span>Australia</span></div></div></a>
+      <a class="ph rv" style="grid-column:span 4"><span class="lbl">[ project screenshot ]</span><div><div class="t">Project name</div><div class="tags"><span>Branding</span><span>Europe</span></div></div></a>
+      <a class="ph rv" style="grid-column:span 4"><span class="lbl">[ project screenshot ]</span><div><div class="t">Project name</div><div class="tags"><span>Custom App</span><span>Singapore</span></div></div></a>
+      <a class="ph reel rv"><span class="lbl">[ AI video showreel · 60–90s, muted autoplay ]</span><span class="play"></span><div><div class="t">AI Video Production · Showreel</div></div></a>
+      <a href="Our Work.html" class="more-work rv">
+        <div><div class="t">100+ more projects, all built their way.</div>
+          <div class="chips-s"><span>Custom apps</span><span>AI agents</span><span>E-commerce</span><span>Automation</span><span>Branding</span><span>AI video</span></div></div>
+        <span class="btn" data-arr>Explore all work</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 QA ============ -->
+<section id="qa" data-scene="qa" data-theme="dark" data-screen-label="08 Testing">
+  <div class="wrap qa">
+    <div class="rv">
+      <div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>Software testing · QA as a service</div>
+      <h2 class="h2">Find the problems<br><span class="o">before your customers do.</span></h2>
+      <p class="lede" style="margin-top:24px">A dedicated team that does nothing but test. We use your website or app the way real customers will, then hand your developer a clear report they can act on the same day. Built for small teams, freelancers, agencies and anyone shipping fast with AI tools.</p>
+      <div class="qa-chips"><span>Manual testing</span><span>Compatibility testing</span><span>Performance testing</span><span>Automation testing</span><span>Penetration testing</span><span>API &amp; security</span></div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="Software Testing.html" class="btn btn-primary" data-arr>Get my app tested</a>
+        <a href="Software Testing.html#report" class="btn btn-ghost">See what you receive</a>
+      </div>
+    </div>
+    <div class="bugbox rv">
+      <div class="bar"><i></i><i></i><i></i><span class="url">staging.your-app.com</span><span class="count" id="bugCount"></span></div>
+      <div class="mock" id="mock">
+        <div class="r" style="left:28px;right:28px;top:28px;height:44px"></div>
+        <div class="r" style="left:28px;width:48%;top:96px;height:150px"></div>
+        <div class="r" style="right:28px;width:38%;top:96px;height:70px"></div>
+        <div class="r" style="right:28px;width:38%;top:176px;height:70px"></div>
+        <div class="r" style="left:28px;right:28px;top:270px;height:20px;width:60%"></div>
+        <div class="r" style="left:28px;top:304px;height:44px;width:140px;background:#3a2414"></div>
+        <div class="bug-done" id="bugDone">
+          <h4>That's what our testers do.<br><span class="o">All day, on every device.</span></h4>
+          <button class="btn btn-ghost" id="bugReset">Hunt again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 PROOF + MARKETS ============ -->
+<section id="markets-sec" data-scene="proof" data-screen-label="09 Proof & Markets">
+  <div class="wrap">
+    <div class="eyebrow rv"><span class="cap"></span>Five years of building</div>
+    <div class="proof">
+      <div class="stat rv"><div class="v" data-count="100">0<sup>+</sup></div><div class="l">Companies we've built for</div></div>
+      <div class="stat rv"><div class="v" data-count="5">0</div><div class="l">Years building, from early automation to agentic AI</div></div>
+      <div class="stat rv"><div class="v" data-count="8">0</div><div class="l">Markets served from one India-based team</div></div>
+    </div>
+    <div class="rv" style="margin-top:120px;display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap">
+      <h2 class="h2">Global quality.<br><span class="o">Honest pricing.</span></h2>
+      <p class="lede">Senior engineers based in India, working in your time zone. Pick your market: we price in your currency and keep your data rules.</p>
+    </div>
+    <div class="markets rv" id="markets"></div>
+  </div>
+</section>
+
+<!-- ============ 10 RECENT DEVELOPMENTS ============ -->
+<section id="developments" data-scene="work" data-screen-label="10 Recent Developments">
+  <div class="wrap">
+    <div class="dev-head rv">
+      <div>
+        <div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>Recent developments</div>
+        <h2 class="h2">What we've been<br><span class="o">building lately.</span></h2>
+      </div>
+      <a href="Recent Developments.html" class="btn btn-ghost" data-arr>All developments</a>
+    </div>
+    <div class="dev-rail">
+      <a href="Recent Developments.html#d1" class="dev feat rv">
+        <div class="meta"><span class="kind">AI Agents</span><span>Interactive · 6 min</span></div>
+        <h3>An agent that answers WhatsApp leads, qualifies them, then books the visit.</h3>
+        <div class="viz">[ interactive demo / screen recording ]</div>
+        <span class="read o">Try the walkthrough<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="Recent Developments.html#d2" class="dev rv">
+        <div class="meta"><span class="kind">Interactive AI video</span><span>4 min</span></div>
+        <h3>A product video viewers can ask questions to.</h3>
+        <div class="viz">[ video still ]</div>
+        <span class="read">Read<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="Recent Developments.html#d3" class="dev rv">
+        <div class="meta"><span class="kind">Automation</span><span>5 min</span></div>
+        <h3>Invoices in, ledger updated: no one touches a spreadsheet.</h3>
+        <div class="viz">[ workflow diagram ]</div>
+        <span class="read">Read<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11 FREEDOM LAB ============ -->
+<section class="lab" id="lab" data-scene="lab" data-theme="dark" data-screen-label="11 Freedom Lab">
+  <div class="wrap lab-grid">
+    <div class="rv" style="position:relative;z-index:2">
+      <div class="eyebrow" style="margin-bottom:22px"><span class="cap"></span>Freedom Lab</div>
+      <h2 class="h2">What do you<br>want to <span class="o">build?</span></h2>
+      <p class="lede" style="margin-top:24px">Describe it in your own words. No forms full of jargon. A real person replies within 24 hours.</p>
+      <form id="ctaForm" style="display:none"><input id="ctaIdea"></form>
+    </div>
+    <div class="lab-card">
+      <div class="lab-prog"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+      <div class="lab-step">
+        <div class="q">What's your idea?</div>
+        <div class="hint">A sentence is enough. Write it like you'd say it to a friend.</div>
+        <textarea id="idea" placeholder="e.g. An app for my bakery that takes WhatsApp orders and tracks deliveries…"></textarea>
+      </div>
+
+      <div class="lab-step">
+        <div class="q">What do you need?</div>
+        <div class="hint">Pick as many as you like.</div>
+        <div class="chips" id="chipsNeeds"></div>
+      </div>
+
+      <div class="lab-step">
+        <div class="q">Where are you?</div>
+        <div class="hint" id="labRegionHint"></div>
+        <div class="chips" id="chipsRegion"></div>
+        <div class="lab-sub">Where are you today?</div>
+        <div class="chips" id="chipsStage"></div>
+      </div>
+
+      <div class="lab-step">
+        <div class="q">Timeline & budget</div>
+        <div class="hint">Optional. It helps us shape the first call.</div>
+        <div class="lab-sub" style="margin-top:0">Timeline</div>
+        <div class="chips" id="chipsTime"></div>
+        <div class="lab-sub">Budget</div>
+        <div class="chips" id="chipsBudget"></div>
+      </div>
+
+      <div class="lab-step">
+        <div class="q">Where do we reply?</div>
+        <div class="summary" id="summary" style="margin-bottom:22px"></div>
+        <input id="fName" placeholder="Your name" autocomplete="name">
+        <input id="fEmail" type="email" placeholder="Email" autocomplete="email">
+        <div class="phone" id="fPhone" data-phone></div>
+      </div>
+
+      <div class="lab-step lab-done">
+        <div class="big"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <div class="q">Your idea is in, <span class="o" id="doneName"></span>.</div>
+        <p class="hint" style="max-width:36ch">We'll reply within 24 hours with a few questions and a time for a free call.</p>
+        <button class="btn btn-ghost" id="labAgain">Send another idea</button>
+      </div>
+
+      <div class="lab-err" id="labErr"></div>
+      <div class="lab-nav">
+        <button class="back" id="labBack">← Back</button>
+        <button class="btn btn-primary" id="labNext">Continue <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer data-scene="footer" data-theme="dark" data-screen-label="12 Footer">
+  <div class="ft-big">Your idea.<br><span class="o">Your rules.</span></div>
+  <div class="ft-cols">
+    <div>
+      <img src="assets/ltab-logo-dark.png" alt="LTAB AI" style="height:28px;margin-bottom:20px">
+      <p style="color:#9a978f;max-width:34ch">Custom software, AI and brand, built the way you think. Engineering hub in India, clients in 8 markets.</p>
+      <a href="/cdn-cgi/l/email-protection#dab2bfb6b6b59ab6aebbb8f4bbb3" style="margin-top:20px;font-size:20px"><span class="__cf_email__" data-cfemail="cea6aba2a2a18ea2baaface0afa7">[email&#160;protected]</span></a>
+    </div>
+    <div><h5>Build</h5><a href="#services">Custom apps</a><a href="#services">AI agents</a><a href="#services">Automation</a><a href="#services">Websites</a><a href="#services">E-commerce</a></div>
+    <div><h5>Grow & Assure</h5><a href="#services">Branding</a><a href="#services">AI marketing & ads</a><a href="#services">AI video</a><a href="#services">Interactive AI content</a><a href="Software Testing.html">Software testing</a><a href="Recent Developments.html">Recent developments</a><a href="Our Work.html">All work</a></div>
+    <div><h5>Markets</h5><a>USA · Canada</a><a>Europe · UK</a><a>UAE</a><a>Singapore · Malaysia</a><a>Australia · NZ</a></div>
+  </div>
+  <div class="ft-bot"><span>© 2026 LTAB AI</span><span>Privacy · Terms · Cookies · GDPR</span></div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/three@0.149.0/build/three.min.js"></script>
+<script src="site/common.js?v=7"></script>
+<script src="site/scene.js?v=7"></script>
+<script src="site/app.js?v=7"></script>
+</body>
+</html>
