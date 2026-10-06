@@ -146,6 +146,14 @@
   });
   $$('[data-pkg]').forEach(a=>a.addEventListener('click', ()=>{ state.package = a.dataset.pkg; $$('[data-group="package"] .chip').forEach(x=>x.classList.toggle('on', x.textContent===state.package)); }));
   $$('[data-who]').forEach(a=>a.addEventListener('click', ()=>{ state.audience = [a.dataset.who]; $$('[data-group="audience"] .chip').forEach(x=>x.classList.toggle('on', x.textContent===a.dataset.who)); }));
+  /* custom plan from the builder → package chip + summary note + payload */
+  const planNote = $('#planNote');
+  function setPackage(v){ state.package = v; $$('[data-group="package"] .chip').forEach(x=>x.classList.toggle('on', x.textContent===v)); }
+  document.addEventListener('ltab:plan', e=>{
+    const pl = e.detail; setPackage('Custom plan');
+    if(planNote){ planNote.hidden = false; planNote.querySelector('span').textContent = `${pl.items.length} testing type${pl.items.length===1?'':'s'} · ${pl.days} day${pl.days>1?'s':''} · ${pl.environments} environment${pl.environments>1?'s':''} · ${pl.devices} device${pl.devices>1?'s':''} · about ${pl.rough_tester_days} tester-days`; }
+  });
+  $$('[data-group="package"] .chip').forEach(c=>c.addEventListener('click', ()=>{ if(planNote && c.textContent!=='Custom plan') planNote.hidden = true; else if(planNote && window.__ltabPlan && state.package==='Custom plan') planNote.hidden = false; }));
   const CRM_ENDPOINT = ''; // ← your CRM webhook
   form.addEventListener('submit', async e=>{
     e.preventDefault(); err.textContent='';
@@ -156,7 +164,7 @@
     if(pv.number && pv.number.replace(/\D/g,'').length<6){ err.textContent='That phone number looks short.'; return; }
     const payload = {
       type:'qa_assessment', audience:state.audience, product, focus:state.focus, platform:state.platform, stack:$('#qStack').value.trim(),
-      services:state.services, package:state.package, start:state.start, access:state.access,
+      services:state.services, package:state.package, custom_plan:(state.package==='Custom plan' ? (window.__ltabPlan||null) : null), start:state.start, access:state.access,
       release_date:$('#qDate').value, name, email, role:$('#qRole').value.trim(), company:$('#qCompany').value.trim(),
       country: cs.value || pv.country, phone:pv.e164, phone_country:pv.country, phone_dial:pv.dial,
       region:localStorage.getItem('ltab-region')||'', source:'ltab.ai/software-testing', submitted_at:new Date().toISOString()
