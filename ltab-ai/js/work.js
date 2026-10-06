@@ -18,7 +18,7 @@
     $('#grid').className='wgrid'+(view==='list'?' list':'');
     $('#grid').innerHTML=l.slice(0,shown).map(p=>`<button class="wcard" data-id="${p.id}"><div class="shot">[ screenshot ]</div>
       <div class="info"><h3>${p.name}</h3><div class="tags"><span>${p.svc}</span>${p.svc2!==p.svc?`<span>${p.svc2}</span>`:''}<span>${p.ind}</span><span class="rg">${p.reg}</span></div></div></button>`).join('')
-      || '<p class="lede" style="grid-column:1/-1">No projects match. Try another filter.</p>';
+      || '<p class="lede" style="grid-column:1/-1">Nothing matches. Try another filter.</p>';
     $('#more').style.display = shown<l.length ? '' : 'none';
   }
   $('#fSvc').addEventListener('click',e=>{const b=e.target.closest('button'); if(!b)return; svc=b.dataset.v; shown=12; $$('#fSvc button').forEach(x=>x.classList.toggle('on',x===b)); render();});

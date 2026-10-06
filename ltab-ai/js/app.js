@@ -41,12 +41,13 @@
     const r = REGIONS.find(x=>x.code===code);
     $('#regionLbl').textContent = r.code;
     $('#heroRegion').textContent = r.name;
-    $('#labRegionHint').textContent = `Detected: ${r.name}`;
+    $('#labRegionHint').textContent = `Your region: ${r.name}`;
     $$('#regionMenu button').forEach(b=>b.classList.toggle('on', b.dataset.r===code));
     $$('#markets .mk[data-r]').forEach(b=>b.classList.toggle('on', b.dataset.r===code));
     $$('#chipsRegion .chip').forEach(b=>b.classList.toggle('on', b.dataset.v===r.name));
     lead.region = r.name;
     const pe = document.getElementById('fPhone'); if(pe && pe.setRegion) pe.setRegion(code);
+    document.dispatchEvent(new CustomEvent('ltab:region',{detail:code}));
   }
   $('#regionBtn').addEventListener('click', e=>{ e.stopPropagation(); menu.classList.toggle('open'); });
   document.addEventListener('click', ()=>menu.classList.remove('open'));
@@ -103,6 +104,7 @@
   let activeFrStep = 0;
   let hasSteppedInCurrentGesture = false;
   let gestureIdleTimer = null;
+  let frLockUntil = 0, frLockTarget = null;
 
   const frItems = $$('.fr-item'), frSteps = $$('.fr-steps button'), frNum = $('.fr-num span');
 
@@ -124,6 +126,8 @@
     activeFrStep = Math.min(3, Math.max(0, stepIdx));
     setFr(activeFrStep);
     const targetTop = getFrStepTop(activeFrStep);
+    frLockUntil = performance.now() + 2000;
+    frLockTarget = targetTop;
     window.scrollTo({ top: targetTop, behavior: 'smooth' });
   }
 
@@ -132,6 +136,11 @@
     scrollToFrStep(i);
   }));
   setFr(0);
+
+  /* keep the clicked step visible while the smooth glide travels; release at arrival */
+  addEventListener('scroll', ()=>{
+    if(frLockTarget != null && Math.abs(scrollY - frLockTarget) < 3) frLockUntil = 0;
+  }, {passive:true});
 
   function handleFrWheel(e) {
     if (!fr) return;
@@ -251,7 +260,7 @@
     // freedoms
     const fr_r = fr.getBoundingClientRect();
     const inStickyZone = (fr_r.top <= 20 && fr_r.bottom >= innerHeight - 20);
-    if (!inStickyZone) {
+    if (!inStickyZone && performance.now() >= frLockUntil) {
       const fp = Math.min(.999, Math.max(0, -fr_r.top / (fr_r.height - innerHeight)));
       setFr(Math.floor(fp * 4));
     }
@@ -284,23 +293,23 @@
 
   /* ---------- services tabs ---------- */
   const SERVICES = {
-    build:{line:'Software shaped around how you actually work.', items:[
-      ['Custom Applications','Web and mobile apps built for your workflow, not squeezed into someone else’s.'],
-      ['AI Agents & AI-Powered Apps','Agentic AI that reads, decides and acts inside your tools and processes.'],
-      ['Business Automation','Replace the copy-paste and the chasing. Workflows that run themselves.'],
-      ['Custom Websites','High-performance, interactive sites with no template underneath.'],
-      ['E-commerce','Stores and commerce apps designed around your products and customers.'],
+    build:{line:'We build software around how you work — not how it wants you to.', items:[
+      ['Custom Applications','Apps for phone and web, made to fit the way you work. Step by step, your way.'],
+      ['AI Agents & AI-Powered Apps','Smart helpers that read, answer, decide and do the task — like a teammate who works all day.'],
+      ['Business Automation','The boring, repeated work runs itself. Fewer mistakes. Hours back every week.'],
+      ['Custom Websites','A fast, good-looking website made only for you. Not a template with your logo on it.'],
+      ['E-commerce','An online store that makes buying easy for your customers — and easy for you to run.'],
     ]},
-    grow:{line:'A brand people remember, AI content people play with, and campaigns that pay back.', items:[
-      ['Branding','Identity, logo and full brand systems, from first sketch to guidelines.'],
-      ['AI Digital Marketing & Ads','Performance campaigns planned, created and optimised with AI, measured on real revenue.'],
-      ['AI Video Production','Brand films, ads, product videos and social content, produced with AI at a fraction of the usual time.'],
-      ['Interactive AI Videos','Videos viewers can talk to, choose a path in, or shop from. AI presenters, branching stories, personalised messages.'],
-      ['Interactive AI Content','Quizzes, configurators, AI assistants and playful campaign microsites that respond to each visitor.'],
+    grow:{line:'A brand people remember. Videos people play with. Ads that bring customers.', items:[
+      ['Branding','Your logo, your colours, your style — how people remember you.'],
+      ['AI Digital Marketing & Ads','Ads planned and tuned with AI. You see exactly what each one brought back.'],
+      ['AI Video Production','Brand films, ads and product videos made with AI — days instead of weeks.'],
+      ['Interactive AI Videos','Videos your customer can talk to. Ask a question, get an answer, keep watching.'],
+      ['Interactive AI Content','Quizzes, mini-tools and games that change for every visitor — and collect leads while they play.'],
     ]},
-    assure:{line:'Find website and app problems before your customers do.', items:[
-      ['Software Testing / QA','Independent human testing of your website or app before launch or a major update, with a clear report your developer can act on.', 'software-testing.html'],
-      ['QA for Developers & Freelancers','Built something for a client? Get a second set of eyes before handoff. White-label available.', 'software-testing.html#packages'],
+    assure:{line:'Find the problems before your customers do.', items:[
+      ['Software Testing / QA','Real people click through your site or app like customers would. You get a clear fix-list before launch.', 'software-testing.html'],
+      ['QA for Developers & Freelancers','Built something for a client? Let us check it before you hand it over. We can work under your name.', 'software-testing.html#packages'],
     ]},
   };
   const grid = $('#svcGrid'), lineEl = $('#svcLine');
@@ -313,7 +322,7 @@
       <div><span class="idx">${pillar.toUpperCase()} / 0${i+1}</span><h3>${s[0]}</h3></div><p>${s[1]}</p></a>`).join('')
       + `<a href="#lab" class="svc wide" data-svc="Everything" style="animation-delay:${p.items.length*60}ms"><span class="go">${ARROW}</span>
         <div><span class="idx" style="color:var(--orange)">END-TO-END</span><h3>Idea → Business</h3></div>
-        <p>Brand, product, launch and marketing with one team. For founders who want a single partner from first idea to first customers.</p></a>`;
+        <p>One team takes you all the way: brand, product, testing, launch, marketing. You talk. We build.</p></a>`;
     $$('#svcTabs button').forEach(b=>b.classList.toggle('on', b.dataset.p===pillar));
   }
   $('#svcTabs').addEventListener('click', e=>{ const b=e.target.closest('button'); if(!b) return; pillar=b.dataset.p; renderSvc(); S().pulse(.3); });
@@ -323,15 +332,15 @@
   /* ---------- two paths ---------- */
   const PATHS = [
     {h:'You have an idea. We’ll help you turn it into a business.', steps:[
-      'A free call where you explain it in your own words. No jargon, and nothing you need to prepare.',
-      'We draw it with you: screens, flows, and what to automate from day one.',
-      'Brand, product and launch from one team, at a price that works for a first business.',
-      'You own everything we build. Code, design, accounts.']},
+      'A free call. You tell us the idea in your own words. Nothing to prepare.',
+      'We draw it together: screens, steps, and what AI can do for you.',
+      'One team builds your brand, your product and your launch — at a price a first business can carry.',
+      'You own everything. Code, design, accounts — all yours.']},
     {h:'Your business works. We’ll make it run on AI.', steps:[
-      'We map where the hours go: the manual steps, the spreadsheets, the copy-paste.',
-      'We plan AI agents and automations around your current process, not a new one.',
-      'We connect them to the CRM, ERP and tools you already use. No forced migration.',
-      'We measure it in hours saved and costs cut, and keep improving every month.']},
+      'We find where your hours go: the typing, the copy-paste, the chasing.',
+      'Then we add AI around the way you already work. You keep your ways.',
+      'It plugs into the tools you already use. Nothing to move.',
+      'Every month we count the hours saved. Then we make it better.']},
   ];
   const sw = $('#switch'), pc = $('#pathCard');
   function renderPath(i){
@@ -427,13 +436,13 @@
   }
   function validate(i){
     if(i===0 && lead.idea.trim().length<8){ err.textContent='Tell us a little more. One sentence is enough.'; return false; }
-    if(i===1 && !lead.needs.length){ err.textContent='Pick at least one, or choose “Everything”.'; return false; }
+    if(i===1 && !lead.needs.length){ err.textContent='Pick at least one — or just pick "Everything".'; return false; }
     if(i===stepsEl.length-2){
       lead.name = $('#fName').value.trim(); lead.email = $('#fEmail').value.trim();
       const pv = phoneEl.phoneValue(); lead.phone = pv.e164; lead.phone_country = pv.country; lead.phone_dial = pv.dial;
       if(pv.number && pv.number.replace(/\D/g,'').length < 6){ err.textContent='That phone number looks short. Check it, or leave it empty.'; return false; }
       if(!lead.name){ err.textContent='What should we call you?'; return false; }
-      if(!/^\S+@\S+\.\S+$/.test(lead.email)){ err.textContent='We need a valid email to reply.'; return false; }
+      if(!/^\S+@\S+\.\S+$/.test(lead.email)){ err.textContent='We need your email to write back.'; return false; }
     }
     return true;
   }

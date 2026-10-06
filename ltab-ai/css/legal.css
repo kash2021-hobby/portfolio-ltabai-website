@@ -1,0 +1,66 @@
+/* LTAB AI — legal layer: consent banner + Legal Center */
+/* ---------- consent banner ---------- */
+.cbar{position:fixed;left:14px;right:14px;bottom:14px;z-index:55;display:flex;justify-content:center;pointer-events:none}
+.cbar-card{pointer-events:auto;max-width:720px;width:100%;background:#1b1b1b;color:#f3f1ec;border:1px solid var(--line-d);border-radius:28px;
+  padding:22px 24px 20px;box-shadow:0 24px 70px rgba(0,0,0,.35);opacity:0;transform:translateY(24px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.cbar.open .cbar-card{opacity:1;transform:none}
+.cbar-eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-d);display:flex;align-items:center;gap:10px}
+.cbar-eyebrow b{color:#fff;font-weight:500}
+.cbar-copy{font-size:15px;line-height:1.5;color:#c9c7c1;margin:12px 0 10px;max-width:58ch}
+.cbar-links{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-weight:700;font-size:13.5px;margin-bottom:16px}
+.cbar-links a{color:#fff;text-decoration:underline 1.5px;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.35);transition:text-decoration-color .2s}
+.cbar-links a:hover{text-decoration-color:var(--orange)}
+.cbar-links i{color:#555;font-style:normal}
+.cbar-actions{display:flex;gap:10px;flex-wrap:wrap}
+.cbar-actions .btn{height:46px;padding:0 22px;font-size:15px}
+.cbar-actions .btn-ghost{border-color:#3a3a3a}
+.cbar-actions .btn-ghost:hover{background:transparent;color:#fff;border-color:#fff}
+
+/* ---------- form consent notes (appears inside forms) ---------- */
+.legal-note{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.02em;color:var(--muted-d);line-height:1.6;margin-top:14px}
+form .legal-note, .lab-step .legal-note, .intake .legal-note{color:var(--muted-d)}
+.legal-note a{color:var(--orange);text-decoration:underline;text-underline-offset:3px}
+form .legal-note a, [data-theme="light"] .legal-note a{text-decoration-color:rgba(255,106,0,.4)}
+
+/* ---------- Legal Center ---------- */
+.lawwrap{max-width:1000px;margin:0 auto}
+.lg-ctrl{position:sticky;top:76px;z-index:20;background:rgba(246,245,241,.94);backdrop-filter:blur(8px);padding:16px 0 14px;border-bottom:1px solid var(--line);margin-bottom:34px}
+.lg-ctrl .filters{gap:8px}
+.lg-ctrl .jur{margin-top:10px}
+.lg-head{display:flex;justify-content:space-between;align-items:start;gap:30px;flex-wrap:wrap;margin-bottom:26px}
+.lg-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
+.lg-chip{font-family:var(--f-mono);font-size:12px;padding:6px 12px;border-radius:var(--pill);background:#fff;border:1px solid var(--line);color:var(--ink)}
+.lg-chip.lg-orange{background:var(--orange);border-color:var(--orange);color:#fff}
+.lg-chip.lg-ok{background:#dcfce7;border-color:#bbf7d0;color:#15803d}
+.lg-chip.lg-warn{background:#fef3c7;border-color:#fde68a;color:#b45309}
+.lg-tag{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.lg-intro{font-size:clamp(18px,1.5vw,21px);color:var(--ink);font-weight:500;max-width:64ch;margin-bottom:34px}
+.lg-doc{background:#fff;border-radius:var(--r-lg);padding:clamp(26px,3.4vw,52px)}
+.lg-doc h3{font-family:var(--f-display);font-weight:800;font-size:clamp(22px,2vw,28px);letter-spacing:-.02em;line-height:1.05;margin:34px 0 14px}
+.lg-doc h3:first-child{margin-top:0}
+.lg-doc p{font-size:16.5px;line-height:1.65;color:#3f3c37;margin:10px 0;max-width:74ch}
+.lg-doc li, .lg-annex li{font-size:16.5px;line-height:1.6;color:#3f3c37;list-style:none;position:relative;padding:6px 0 6px 26px;max-width:72ch}
+.lg-doc li:before, .lg-annex li:before{content:"";position:absolute;left:4px;top:16px;width:8px;height:2px;background:var(--orange)}
+.lg-extra{margin:36px 0 8px;padding:22px 24px;background:var(--orange-soft);border-radius:var(--r)}
+.lg-extra p{margin:6px 0;font-size:16px}
+.lg-annex{margin-top:38px;padding-top:30px;border-top:2px solid var(--ink)}
+.lg-row{display:grid;grid-template-columns:170px 1fr;gap:18px;padding:16px 0;border-top:1px solid var(--line)}
+.lg-row:first-child{border-top:0}
+.lg-row .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);padding-top:4px}
+.lg-row p{font-size:15.5px;margin:8px 0 0;max-width:70ch}
+.lg-row b{display:block;font-size:15.5px;font-weight:700;color:var(--ink);margin-top:10px}
+.lg-row b:first-child{margin-top:0}
+.lg-row .lg-a{color:var(--orange-deep);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.lg-row .arr{width:14px;height:14px}
+.lg-note{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);margin-top:30px;max-width:70ch;line-height:1.6}
+
+@media (max-width:760px){
+  .lg-row{grid-template-columns:1fr;gap:6px}
+  .lg-ctrl{top:64px}
+  .cbar{left:10px;right:10px;bottom:10px}
+}
+@media print{
+  .hdr,.mmenu,.cbar,.lg-ctrl,#lgPrint,footer{display:none!important}
+  .lg-doc{box-shadow:none;border-radius:0;padding:0}
+  body{background:#fff}
+}

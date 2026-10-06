@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/fonts.css?v=1">
 <link rel="stylesheet" href="css/styles.css?v=1">
 <link rel="stylesheet" href="css/pages.css?v=1">
+<link rel="stylesheet" href="css/legal.css?v=1">
 </head>
 <body class="sub" data-theme="light">
 
@@ -33,7 +34,7 @@
   <div class="wrap">
     <div class="crumb"><a href="index.html">LTAB AI</a><span>/</span><span class="o">Recent developments</span></div>
     <h1 class="display">What we've been<br><span class="o">building lately.</span></h1>
-    <p class="lede">Short, interactive write-ups of the new tech we've shipped: AI agents, automations, interactive video and more. Every post shows what we built, why, and how it works.</p>
+    <p class="lede">Short, interactive write-ups of what we shipped lately: AI helpers, automations, interactive video and more. What we built, why, and how it works.</p>
   </div>
 </section>
 
@@ -55,6 +56,7 @@
       <input id="subEmail" type="email" placeholder="you@company.com" style="flex:1;min-width:220px">
       <button class="btn btn-primary" data-arr>Subscribe</button>
       <span class="err" id="subMsg" style="width:100%;color:var(--muted-d)"></span>
+      <p class="legal-note" style="width:100%">We store your email to send the next update — nothing else, no sharing: <a href="legal/index.html" data-legal="declaration">the declaration for your region</a>.</p>
     </form>
   </div>
 </section>
@@ -62,11 +64,13 @@
 
 <footer data-theme="dark">
   <div class="ft-big">Your idea.<br><span class="o">Your rules.</span></div>
-  <div class="ft-bot" style="margin-top:60px;border-top:1px solid var(--line-d);padding-top:30px"><a href="index.html">← LTAB AI home</a><span>© 2026 LTAB AI</span></div>
+  <div class="ft-bot" style="margin-top:60px;border-top:1px solid var(--line-d);padding-top:30px"><a href="index.html">← LTAB AI home</a><span>© 2026 LTAB AI</span><span><a href="legal/index.html" data-legal="privacy" style="color:#ddd">Privacy</a> · <a href="legal/index.html" data-legal="terms" style="color:#ddd">Terms</a> · <a href="legal/index.html" data-legal="cookies" style="color:#ddd">Cookies</a></span></div>
 </footer>
 
 <!-- reader -->
 <div class="reader" id="reader"><div class="reader-panel" id="readerPanel"></div></div><script src="js/common.js"></script>
 <script src="js/posts.js"></script>
+<script src="js/policies-data.js"></script>
+<script src="js/legal.js"></script>
 </body>
 </html>

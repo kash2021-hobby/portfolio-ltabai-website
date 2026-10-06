@@ -2,7 +2,11 @@
 
 Production build of the four-page LTAB AI marketing site, recreated from the
 high-fidelity design handoff in the `designer2-46e574f1-1a61-4036-beda-a5bcde69205d`
-design repo (bundle `design_handoff_ltab-ai-website`).
+design repo (bundle `design_handoff_ltab-ai-website`), plus two post-handoff layers:
+
+1. **Region-aware legal system** (`legal/`, `js/legal.js`, `js/policies-data.js`, `css/legal.css`)
+2. **Copy simplicity pass** — all sentence content rewritten to stay punchy but be
+   understandable in one read (roughly an 11-year-old); structure, styling and motion untouched.
 
 ## Pages
 
@@ -12,6 +16,30 @@ design repo (bundle `design_handoff_ltab-ai-website`).
 | `software-testing.html` | QA-as-a-service landing — release-readiness panel, testing types, flagship offer, six-step life cycle, packages, deliverables, boundaries, FAQ, intake form |
 | `our-work.html` | Filterable/searchable project archive with grid/list views and a slide-in case-study reader |
 | `recent-developments.html` | Updates index with category filters, deep-linkable reader (`#d1`…`#d7`) and three inline interactive demos |
+| `legal/index.html` | Legal Center — renders Privacy Policy / Terms / Cookie Notice / Data Collection Declaration for the active region, with jurisdiction toggle (Europe ↔ UK) and print/PDF support |
+
+## Regional legal system
+
+- **Single source of truth:** `js/policies-data.js` holds 9 jurisdictions
+  (US, CA, EU, UK, AE, SG, MY, AU, NZ) each with its laws, regulator, rights list,
+  transfer/retention rules, consent mode and per-document clauses — plus the four
+  shared base documents and a `composeDoc(docKey, jurCode)` composer.
+- **`legal/sources/<code>/*.md`** — 36 per-region documents (9 × 4) generated from
+  that file via `node tools/generate-policy-docs.js`. Edit the data file, re-run,
+  never edit the generated files by hand.
+- **Consent banner (`js/legal.js`)** picks its mode per jurisdiction:
+  `opt-in` (Europe, UK, Singapore, Malaysia — nothing optional runs before you allow it)
+  or `notice` (US, Canada, UAE, Australia, NZ). It re-asks automatically when the
+  selected region changes regime (e.g. US → UK), and `LTAB_LEGAL.consentFor(cat)`
+  is the gate future analytics/marketing integrations must call.
+- **Region switching is live:** the site's region control (or the Legal Center's own
+  region row) fires `ltab:region`; the banner, every `[data-legal]` footer link and the
+  Center's documents update in the same tick. The "GDPR" footer label becomes
+  "Data declaration" outside EU/UK automatically.
+- **Language/venue placeholders:** governing law and forum for services contracts are
+  contract-level decisions, marked as such in the Terms document — counsel decides, not this file.
+- ⚠️ All texts are working templates in the brand voice — have qualified counsel
+  review before launch, especially CA/Quebec, MY (amendments) and the free-zone variants in AE.
 
 ## Framework choice
 
@@ -37,14 +65,17 @@ Serve over HTTP(S) (not `file://`) so the self-hosted fonts load.
 
 ```
 ltab-ai/
-├── index.html / software-testing.html / our-work.html / recent-developments.html
+├── index.html / software-testing.html / our-work.html / recent-developments.html / legal/index.html
+├── legal/sources/<code>/*.md     # 36 generated policy documents (9 regions × 4 kinds)
+├── tools/generate-policy-docs.js # regenerates legal/sources from the data file
 ├── assets/
 │   ├── ltab-logo*.png            # real brand logos from the handoff
 │   └── vendor/three.min.js       # Three.js 0.149.0, vendored locally (was unpkg CDN)
 ├── css/
 │   ├── fonts.css                 # @font-face for self-hosted fonts
 │   ├── styles.css                # design tokens, global system, home sections
-│   └── pages.css                 # subpage components (QA, work archive, posts, reader…)
+│   ├── pages.css                 # subpage components (QA, work archive, posts, reader…)
+│   └── legal.css                 # consent banner + Legal Center
 ├── fonts/*.woff2                 # Bricolage Grotesque / Manrope / JetBrains Mono (latin, variable)
 └── js/
     ├── common.js                 # regions, region detection, phone field, reveal net, motion-clock guard
@@ -52,7 +83,9 @@ ltab-ai/
     ├── app.js                    # home interactions + Freedom Lab wizard
     ├── qa.js                     # Software Testing page logic (readiness, life cycle, intake)
     ├── work.js                   # Our Work archive logic (extracted from inline design script)
-    └── posts.js                  # Recent Developments logic incl. interactive demos (extracted)
+    ├── posts.js                  # Recent Developments logic incl. interactive demos (extracted)
+    ├── policies-data.js          # legal single source of truth (9 jurisdictions × 4 docs)
+    └── legal.js                  # consent banner, region-aware links, Legal Center renderer
 ```
 
 ## Wired for production
