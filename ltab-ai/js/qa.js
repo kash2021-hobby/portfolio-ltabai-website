@@ -137,7 +137,7 @@
 
   /* ---------- intake form ---------- */
   const form = $('#qaForm'), err = $('#qErr');
-  const state = {focus:[], platform:[], services:[], package:'', start:'', access:''};
+  const state = {audience:[], focus:[], platform:[], services:[], package:'', start:'', access:''};
   $$('[data-group]', form).forEach(grp=>{
     const key = grp.dataset.group, single = grp.hasAttribute('data-single');
     grp.addEventListener('click', e=>{ const c=e.target.closest('.chip'); if(!c) return; const v=c.textContent;
@@ -145,6 +145,7 @@
       else { state[key] = state[key].includes(v) ? state[key].filter(x=>x!==v) : [...state[key], v]; c.classList.toggle('on'); } });
   });
   $$('[data-pkg]').forEach(a=>a.addEventListener('click', ()=>{ state.package = a.dataset.pkg; $$('[data-group="package"] .chip').forEach(x=>x.classList.toggle('on', x.textContent===state.package)); }));
+  $$('[data-who]').forEach(a=>a.addEventListener('click', ()=>{ state.audience = [a.dataset.who]; $$('[data-group="audience"] .chip').forEach(x=>x.classList.toggle('on', x.textContent===a.dataset.who)); }));
   const CRM_ENDPOINT = ''; // ← your CRM webhook
   form.addEventListener('submit', async e=>{
     e.preventDefault(); err.textContent='';
@@ -154,7 +155,7 @@
     if(!/^\S+@\S+\.\S+$/.test(email)){ err.textContent='We need a valid email to reply.'; return; }
     if(pv.number && pv.number.replace(/\D/g,'').length<6){ err.textContent='That phone number looks short.'; return; }
     const payload = {
-      type:'qa_assessment', product, focus:state.focus, platform:state.platform, stack:$('#qStack').value.trim(),
+      type:'qa_assessment', audience:state.audience, product, focus:state.focus, platform:state.platform, stack:$('#qStack').value.trim(),
       services:state.services, package:state.package, start:state.start, access:state.access,
       release_date:$('#qDate').value, name, email, role:$('#qRole').value.trim(), company:$('#qCompany').value.trim(),
       country: cs.value || pv.country, phone:pv.e164, phone_country:pv.country, phone_dial:pv.dial,
