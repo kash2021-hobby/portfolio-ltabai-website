@@ -151,7 +151,7 @@
   function setPackage(v){ state.package = v; $$('[data-group="package"] .chip').forEach(x=>x.classList.toggle('on', x.textContent===v)); }
   document.addEventListener('ltab:plan', e=>{
     const pl = e.detail; setPackage('Custom plan');
-    if(planNote){ planNote.hidden = false; planNote.querySelector('span').textContent = `${pl.items.length} testing type${pl.items.length===1?'':'s'} · ${pl.days} day${pl.days>1?'s':''} · ${pl.environments} environment${pl.environments>1?'s':''} · ${pl.devices} device${pl.devices>1?'s':''} · about ${pl.rough_tester_days} tester-days`; }
+    if(planNote && pl.note){ planNote.hidden = false; planNote.querySelector('span').textContent = pl.note; }
   });
   $$('[data-group="package"] .chip').forEach(c=>c.addEventListener('click', ()=>{ if(planNote && c.textContent!=='Custom plan') planNote.hidden = true; else if(planNote && window.__ltabPlan && state.package==='Custom plan') planNote.hidden = false; }));
   const CRM_ENDPOINT = ''; // ← your CRM webhook
