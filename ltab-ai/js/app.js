@@ -308,7 +308,7 @@
       ['Interactive AI Content','Quizzes, mini-tools and games that change for every visitor — and collect leads while they play.'],
     ]},
     assure:{line:'Find the problems before your customers do.', items:[
-      ['Software Testing / QA','Real people click through your site or app like customers would. You get a clear fix-list before launch.', 'software-testing.html'],
+      ['Software Testing / QA','Real people test your site or app — including the AI inside it — before launch. You get a clear fix-list and a plain risk read.', 'software-testing.html'],
       ['QA for Developers & Freelancers','Built something for a client? Let us check it before you hand it over. We can work under your name.', 'software-testing.html#packages'],
     ]},
   };

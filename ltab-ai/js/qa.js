@@ -124,8 +124,8 @@
   const CUR = {US:'USD',CA:'CAD',UK:'GBP or EUR',AE:'AED',SG:'SGD',MY:'MYR',AU:'AUD',NZ:'NZD'};
   function pkNote(code){
     const r = LTAB.REGIONS.find(x=>x.code===code) || LTAB.REGIONS[0];
-    if(code==='US'){ $('#pkNote').textContent = 'Prices are indicative "starting from" amounts in US dollars (USD). The final quote depends on the product, the number of pages or journeys, the devices, your access, the deadline, follow-up checks and any scope changes.'; return; }
-    $('#pkNote').textContent = `Prices are shown in US dollars (USD) as indicative "starting from" amounts. For ${r.name} we will send a written quote in ${CUR[code]||'your local currency'} after we have seen your product, journeys, devices, access and deadline.`;
+    if(code==='US'){ $('#pkNote').textContent = 'Every package has a fixed scope and a fixed timeline. The final price depends on the app, the journeys, the devices, your access and the deadline — all of it confirmed in the proposal before anything starts.'; return; }
+    $('#pkNote').textContent = `Every package has a fixed scope and a fixed timeline. For ${r.name} we quote in ${CUR[code]||'your local currency'} after we see your product, journeys, devices, access and deadline — all confirmed in the proposal before anything starts.`;
   }
   document.addEventListener('ltab:region', e=>pkNote(e.detail)); pkNote(LTAB.guessRegion());
 
